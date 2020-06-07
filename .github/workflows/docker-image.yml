@@ -7,13 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      name: Docker Login
+      name: Checkout
     - name: Build and push Docker images
       uses: docker/build-push-action@v1.1.0
       with:
         username: VoyTechnology # can this be dynamic?
         password: ${{ secrets.GITHUB_TOKEN }}
         registry: docker.pkg.github.com
-        repository: saferplace/original
+        repository: saferplace/original/original
         tag_with_ref: true
         tag_with_sha: true
